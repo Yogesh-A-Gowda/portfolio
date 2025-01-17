@@ -243,7 +243,7 @@ const projects = [
   {
     name: "TODO",
     description:
-      "What Better than to kick start the learning process than creating a TODO LIST",
+      "What Better than to kick start the learning process by creating a TODO LIST",
     tags: [
       {
         name: "reactjs",
