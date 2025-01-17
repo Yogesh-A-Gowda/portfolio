@@ -3,13 +3,10 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import Button from "./Button"; // Import the new Button component
 
 import "react-vertical-timeline-component/style.min.css";
-import { textVariant } from "../utils/motion";
-import { experiences } from "../constants";
-
+import { experiences } from "../../constants";
+import { textVariant } from "../../utils/motion";
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
@@ -17,7 +14,7 @@ const ExperienceCard = ({ experience }) => {
         background: "#1d1836",
         color: "#fff",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
@@ -54,16 +51,14 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
-const Experience = () => {
-  const maxVisible = 3; // Set max visible experiences
-  const showMoreButton = experiences.length > maxVisible; // Check if more experiences exist
-  const navigate = useNavigate(); // Use useNavigate for routing
-
+const Experiences = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
         <p className="text-lg text-center font-medium text-gray-500">
-          What I have done so far
+<br/>
+<br/>
+<br/>
         </p>
         <h2 className="text-4xl font-bold text-center text-white">
           Work Experience.
@@ -72,26 +67,16 @@ const Experience = () => {
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
-          {experiences.slice(0, maxVisible).map((experience, index) => (
+          {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
               experience={experience}
             />
           ))}
         </VerticalTimeline>
-
-        {/* Show more button at the bottom of the timeline */}
-        {showMoreButton && (
-          <div className="mt-5 flex justify-center items-center w-full">
-            <Button
-              label="Click here to view all experiences"
-              onClick={() => navigate("/experiences")} // Navigate when clicked
-            />
-          </div>
-        )}
       </div>
     </>
   );
 };
 
-export default Experience;
+export default Experiences;

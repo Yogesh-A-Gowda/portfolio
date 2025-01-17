@@ -2,47 +2,30 @@ import {
   mobile,
   backend,
   creator,
-  web,
   javascript,
-//  typescript,
   html,
   css,
   reactjs,
-  //redux,
   tailwind,
   nodejs,
   mongodb,
   git,
-  //figma,
-  //docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  //threejs,
 } from "../assets";
+import BookStore from '/src/assets/BookStore.png';
+import Expense from '/src/assets/Expense.png';
+import Ecommerce from '/src/assets/Ecommerce.png';
+import TODO from '/src/assets/TODO.png'
 import Postgresql from '../assets/tech/Postgresql.png'
 import iManage from '../assets/company/iManage.jpg'
 import softmantissa_logo from '../assets/company/softmantissa_logo.jpg'
 import python from '../assets/tech/python.png'
 
 export const navLinks = [
-  {
-    id: "about",
-    title: "About",
-  },
-  {
-    id: "work",
-    title: "Work",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-  },
+  { id: "about", title: "About", path: "/about" },
+  { id: "projects", title: "Projects", path: "/projects" },
+  { id: "contact", title: "Contact", path: "/contact" },
 ];
+
 
 const services = [
   // {
@@ -187,9 +170,30 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Expense Manager",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Web-based platform that allows users to track and visualize their expenses. Please use <b class='text-green-500 font-bold'>yogesh@yogesh.com : password1</b> as the database offers limited free storage",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "postgreSQL",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: Expense,
+    source_code_link: "https://expense-manager-3vir.vercel.app/sign-in",
+  },
+  {
+    name: "Ecommerce Web App",
+    description:
+      `Web application that allows users to shop the latest cloths and accessories,Please use <b class="text-green-500 font-bold">Admin yogesh@yogesh.com : password</b> and <b class="text-green-500 font-bold">Customer yogesh2@yogesh.com:password</b> as the database offers limited free storage.`,
     tags: [
       {
         name: "react",
@@ -200,45 +204,32 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
+        name: "stripe",
+        color: "yellow-text-gradient",
       },
       {
-        name: "restapi",
-        color: "green-text-gradient",
+        name: "redis",
+        color: "orange-text-gradient",
       },
       {
         name: "scss",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: Ecommerce,
+    source_code_link: "https://benevolent-belekoy-c4f0aa.netlify.app/",
   },
   {
-    name: "Trip Guide",
+    name: "Book Store",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A simple Book store where you can store a list of your fav books. A weekend project just for fun",
     tags: [
       {
-        name: "nextjs",
+        name: "reactjs",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "mongodb",
         color: "green-text-gradient",
       },
       {
@@ -246,8 +237,29 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: BookStore,
+    source_code_link: "https://book-store-zeta-sable.vercel.app/",
+  },
+  {
+    name: "TODO",
+    description:
+      "What Better than to kick start the learning process than creating a TODO LIST",
+    tags: [
+      {
+        name: "reactjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: TODO,
+    source_code_link: "https://to-do-simple-zn3b.vercel.app/",
   },
 ];
 
