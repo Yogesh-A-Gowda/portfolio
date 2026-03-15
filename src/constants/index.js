@@ -23,6 +23,8 @@ import Postgresql from '../assets/tech/Postgresql.png'
 import iManage from '../assets/company/iManage.jpg'
 import softmantissa_logo from '../assets/company/softmantissa_logo.jpg'
 import python from '../assets/tech/python.png'
+import DrugAnalysis from '../assets/DrugAnalysis.png'
+import EDU from '../assets/EDU.png'
 
 export const navLinks = [
   { id: "about", title: "About", path: "/about" },
@@ -146,63 +148,56 @@ const experiences = [
  
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
+// const testimonials = [
+//   {
+//     testimonial:
+//       "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+//     name: "Sara Lee",
+//     designation: "CFO",
+//     company: "Acme Co",
+//     image: "https://randomuser.me/api/portraits/women/4.jpg",
+//   },
+//   {
+//     testimonial:
+//       "I've never met a web developer who truly cares about their clients' success like Rick does.",
+//     name: "Chris Brown",
+//     designation: "COO",
+//     company: "DEF Corp",
+//     image: "https://randomuser.me/api/portraits/men/5.jpg",
+//   },
+//   {
+//     testimonial:
+//       "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+//     name: "Lisa Wang",
+//     designation: "CTO",
+//     company: "456 Enterprises",
+//     image: "https://randomuser.me/api/portraits/women/6.jpg",
+//   },
+// ];
 
 const projects = [
   {
-    name: "Ecommerce Web App",
+    name: "EduSiksha",
     description:
-      `Web application that allows users to shop the latest cloths and accessories,Please use <b class="text-green-500 font-bold">Admin yogesh@yogesh.com : password</b> and <b class="text-green-500 font-bold">Customer yogesh2@yogesh.com:password</b> as the database offers limited free storage.`,
+      "Parental monitoring app for helping kids understand concepts using AI",
     tags: [
       {
-        name: "react",
+        name: "python",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Gen-AI",
         color: "green-text-gradient",
       },
       {
-        name: "stripe",
-        color: "yellow-text-gradient",
-      },
-      {
-        name: "redis",
-        color: "orange-text-gradient",
-      },
-      {
-        name: "scss",
+        name: "NextJS",
         color: "pink-text-gradient",
       },
     ],
-    image: Ecommerce,
-    source_code_link: "https://benevolent-belekoy-c4f0aa.netlify.app/",
+    image: EDU,
+    source_code_link: "https://github.com/Yogesh-A-Gowda/EduSiksha",
   },
+  
   {
     name: "NASA",
     description:
@@ -225,6 +220,28 @@ const projects = [
     source_code_link: "https://nasa-pfrr.onrender.com/",
   },
   {
+    name: "Drug Analysis",
+    description:
+      "Patients, Doctors and Pharmacists can use this portal to be informed on trust-score among patients to further recommend or use the Drug",
+    tags: [
+      {
+        name: "python",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "NLP",
+        color: "green-text-gradient",
+      },
+      {
+        name: "BERT-Classifier",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: DrugAnalysis,
+    source_code_link: "https://druganalysis-y0wn.onrender.com/",
+  },
+
+  {
     name: "Expense Manager",
     description:
       "Web-based platform that allows users to track and visualize their expenses. Please use <b class='text-green-500 font-bold'>yogesh@yogesh.com : password1</b> as the database offers limited free storage",
@@ -245,6 +262,7 @@ const projects = [
     image: Expense,
     source_code_link: "https://expense-manager-3vir.vercel.app/sign-in",
   },
+   
    {
     name: "Voice Assistant",
     description:
@@ -286,6 +304,35 @@ const projects = [
     ],
     image: college,
     source_code_link: "https://yogesh-a-gowda.github.io/GA/HOME.html",
+  },
+  {
+    name: "Ecommerce Web App",
+    description:
+      `Web application that allows users to shop the latest cloths and accessories,Please use <b class="text-green-500 font-bold">Admin yogesh@yogesh.com : password</b> and <b class="text-green-500 font-bold">Customer yogesh2@yogesh.com:password</b> as the database offers limited free storage.`,
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "stripe",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "redis",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "scss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: Ecommerce,
+    source_code_link: "https://benevolent-belekoy-c4f0aa.netlify.app/",
   },
   {
     name: "AI-CHAT-GEMINI",
@@ -353,4 +400,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, /*testimonials,*/ projects };
