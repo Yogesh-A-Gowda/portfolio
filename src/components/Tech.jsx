@@ -1,12 +1,22 @@
-
+import { useState, useEffect } from "react";
 import { BallCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
-import { technologies } from "../constants/index";
+import { portfolioService } from "../services/portfolioService";
 
 const Tech = () => {
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      const data = await portfolioService.getSkills();
+      setSkills(data);
+    };
+    fetchSkills();
+  }, []);
+
   return (
     <div className='flex flex-row flex-wrap justify-center gap-10'>
-      {technologies.map((technology) => (
+      {skills.map((technology) => (
         <div
           className='w-28 h-28 flex flex-col items-center justify-center'
           key={technology.name}
@@ -18,6 +28,5 @@ const Tech = () => {
     </div>
   );
 };
-
 
 export default SectionWrapper(Tech, "");

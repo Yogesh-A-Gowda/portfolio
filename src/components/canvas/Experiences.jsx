@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -5,8 +6,9 @@ import {
 import { motion } from "framer-motion";
 
 import "react-vertical-timeline-component/style.min.css";
-import { experiences } from "../../constants";
 import { textVariant } from "../../utils/motion";
+import { portfolioService } from "../../services/portfolioService";
+
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
@@ -16,7 +18,7 @@ const ExperienceCard = ({ experience }) => {
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
+      iconStyle={{ background: experience.iconBg || experience.icon_bg }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
           <img
@@ -38,7 +40,7 @@ const ExperienceCard = ({ experience }) => {
       </div>
 
       <ul className="mt-5 list-disc ml-5 space-y-2">
-        {experience.points.map((point, index) => (
+        {experience.points && Array.isArray(experience.points) && experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
             className="text-white-100 text-[14px] pl-1 tracking-wider"
@@ -52,13 +54,23 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experiences = () => {
+  const [experiences, setExperiences] = useState([]);
+
+  useEffect(() => {
+    const fetchExperiences = async () => {
+      const data = await portfolioService.getExperiences();
+      setExperiences(data);
+    };
+    fetchExperiences();
+  }, []);
+
   return (
     <>
       <motion.div variants={textVariant()}>
         <p className="text-lg text-center font-medium text-gray-500">
-<br/>
-<br/>
-<br/>
+          <br/>
+          <br/>
+          <br/>
         </p>
         <h2 className="text-4xl font-bold text-center text-white">
           Work Experience.

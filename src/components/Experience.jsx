@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -8,7 +9,7 @@ import Button from "./Button"; // Import the new Button component
 
 import "react-vertical-timeline-component/style.min.css";
 import { textVariant } from "../utils/motion";
-import { experiences } from "../constants";
+import { portfolioService } from "../services/portfolioService";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -17,9 +18,9 @@ const ExperienceCard = ({ experience }) => {
         background: "#1d1836",
         color: "#fff",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
+      iconStyle={{ background: experience.iconBg || experience.icon_bg }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
           <img
@@ -41,7 +42,7 @@ const ExperienceCard = ({ experience }) => {
       </div>
 
       <ul className="mt-5 list-disc ml-5 space-y-2">
-        {experience.points.map((point, index) => (
+        {experience.points && Array.isArray(experience.points) && experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
             className="text-white-100 text-[14px] pl-1 tracking-wider"
@@ -55,7 +56,17 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  const [experiences, setExperiences] = useState([]);
   const maxVisible = 3; // Set max visible experiences
+
+  useEffect(() => {
+    const fetchExperiences = async () => {
+      const data = await portfolioService.getExperiences();
+      setExperiences(data);
+    };
+    fetchExperiences();
+  }, []);
+
   const showMoreButton = experiences.length > maxVisible; // Check if more experiences exist
   const navigate = useNavigate(); // Use useNavigate for routing
 

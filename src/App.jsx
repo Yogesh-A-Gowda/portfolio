@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, StarsCanvas, Works } from "./components";
 import Experiences from "./components/canvas/Experiences";
 import { ProjectButton } from "./components/ProjectButton";
+import AdminDashboard from "./components/AdminDashboard";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -19,7 +21,7 @@ const App = () => {
                 <About />
                 <Experience />
                 <Tech />
-              <ProjectButton/>
+                <ProjectButton/>
                 <Contact />
                 <StarsCanvas />
               </>
@@ -28,6 +30,7 @@ const App = () => {
           {/* Projects Route */}
           <Route path="/projects" element={<Works />} />
           <Route path="/experiences" element={<Experiences />} />
+          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
       </div>
     </BrowserRouter>

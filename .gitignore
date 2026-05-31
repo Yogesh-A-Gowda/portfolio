@@ -22,3 +22,20 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment secrets
+.env
+.env.local
+.env.*.local
+
+# Local portfolio images & icons (handled by Supabase/Cloudinary)
+src/assets/**/*.png
+src/assets/**/*.jpg
+src/assets/**/*.jpeg
+src/assets/**/*.svg
+
+# Keep structural navigation & UI assets
+!src/assets/logo.svg
+!src/assets/menu.svg
+!src/assets/close.svg
+!src/assets/tech/whiteArrow.png

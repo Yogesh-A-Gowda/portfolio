@@ -11,14 +11,14 @@ import {
   mongodb,
   git,
 } from "../assets";
-import BookStore from '/src/assets/BookStore.png';
-import GEMINI from '/src/assets/GEMINI.png';
-import Driver from '/src/assets/Driver.png';
-import college from '/src/assets/college.png';
-import nasa from '/src/assets/nasa.png';
-import Expense from '/src/assets/Expense.png';
-import Ecommerce from '/src/assets/Ecommerce.png';
-import TODO from '/src/assets/TODO.png'
+import BookStore from '../assets/BookStore.png';
+import GEMINI from '../assets/GEMINI.png';
+import Driver from '../assets/Driver.png';
+import college from '../assets/College.png';
+import nasa from '../assets/nasa.png';
+import Expense from '../assets/Expense.png';
+import Ecommerce from '../assets/Ecommerce.png';
+import TODO from '../assets/TODO.png';
 import Postgresql from '../assets/tech/Postgresql.png'
 import iManage from '../assets/company/iManage.jpg'
 import softmantissa_logo from '../assets/company/softmantissa_logo.jpg'
@@ -47,7 +47,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Data Scientist, just a beginner",
+    title: "Data Science and Artificial Intelligence",
     icon: creator,
   },
   // {
