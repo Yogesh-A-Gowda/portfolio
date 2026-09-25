@@ -5,9 +5,10 @@ import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen min-h-[600px] mx-auto overflow-hidden">
+    <section className="relative w-full h-[50vh] min-h-[300px] mx-auto overflow-hidden">
+
       <div
-        className={`absolute inset-0 top-[100px] sm:top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 z-10 pointer-events-none`}
+        className={`absolute inset-0 top-[100px] sm:top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-center gap-5 z-10 pointer-events-none`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
@@ -25,8 +26,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <ComputersCanvas />
-
+      {/* <ComputersCanvas /> */}
+{/* 
       <div className="absolute xs:bottom-10 bottom-8 w-full flex justify-center items-center z-10">
         <a href="#about" aria-label="Scroll to About section">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2 hover:border-[#915EFF] transition-colors">
@@ -43,7 +44,7 @@ const Hero = () => {
             />
           </div>
         </a>
-      </div>
+      </div> */}
     </section>
   );
 };
