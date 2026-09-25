@@ -3,11 +3,17 @@ import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, StarsCanvas,
 import Experiences from "./components/canvas/Experiences";
 import { ProjectButton } from "./components/ProjectButton";
 import AdminDashboard from "./components/AdminDashboard";
+import DebugOverlay from "./components/DebugOverlay";
+
+const showDebugOverlay =
+  typeof window !== "undefined" &&
+  new URLSearchParams(window.location.search).get("debug") === "1";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
+        {showDebugOverlay && <DebugOverlay />}
         <Navbar />
         <Routes>
           {/* Main Route */}
